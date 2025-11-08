@@ -1,0 +1,43 @@
+dnf insatll docker -y
+systemctl enable docker --now
+systemctl status docker
+systemctl run docker
+================================================================
+Alpine and debin( bookwarm)
+
+docker images
+docker info
+docker ps
+docker pull nginx
+docker ps -a
+docker stop/start/kill container-id
+docker run nginx/mysql
+docker run -d -p 80:80 nginx:latest
+docker run -d --name <name> 80:80 nginx
+docker rmi <countainer>
+docker rm <countainer-id>
+netstat -tunlp
+docker exec -it <container name> /bin/bash or /bin/sh
+docker rename awesome_bartik test1
+echo "this is inside container" > container.txt
+docker network ls
+docker network create my_network
+docker run -dit --name c1 --network my_network alpine
+docker run -dit --name c2 --network my_network alpine
+docker exec -it /bin/sh
+docker rm c2 c1 test mydemo-nginx test1 busy_yonath
+docker build -t my-python-app:v1 .
+
+----------------
+FROM
+LABEL OWNER
+WORKDIR
+COPY ..
+RUN PIP
+EXPOSE
+CMD
+FILE NAME
+
+docker build -t my-python-app:v1 .
+docker tag my-python-app:tag dockeruser/name:tag
+docker push dockeruser/name:
